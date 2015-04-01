@@ -1,0 +1,17 @@
+{
+  "name": "dindin",
+  "version": "0.0.0",
+  "description": "A social network for food.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bleonard",
+  "license": "MIT",
+  "dependencies": {
+    "good": "^5.1.2",
+    "good-console": "^4.1.0",
+    "hapi": "^8.4.0",
+    "sqlite3": "^3.0.5"
+  }
+}
