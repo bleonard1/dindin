@@ -53,14 +53,20 @@ exports.create = function(req, reply) {
 
 //increment star rating by 1
 exports.addStar = function(req, reply) {
-	var sql = '';
+// http://www.tutorialspoint.com/sqlite/sqlite_update_query.htm
+// http://zetcode.com/db/sqlite/datamanipulation/
+// http://stackoverflow.com/questions/744289/sqlite-increase-value-by-a-certain-number
 
-	this.db.run(sql,
-	[
-	],
-	function(err) {
+console.log('star!');
+
+	var sql = 'UPDATE recipes SET stars = stars + 1 WHERE id = ?';
+
+	this.db.run(sql, [req.params.id], function(err) {
 		if (err) throw err;
+		
+		console.log('yaaay', req.params.id);
 
 		reply({status: 'ok'});
 	});
+	
 }

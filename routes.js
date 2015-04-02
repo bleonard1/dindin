@@ -23,6 +23,17 @@ module.exports = [{
 	handler: recipes.create
 },
 {
+	method: 'POST',
+	path: '/api/recipes/{id}/star',
+	config: {
+		auth: 'api',
+		payload: {
+			output: 'data'
+		}
+	},
+	handler: recipes.addStar
+},
+{
 	method:'GET',
 	path: '/api/users', 
 	handler: users.getUsers
